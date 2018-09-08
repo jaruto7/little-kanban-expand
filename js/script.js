@@ -1,14 +1,14 @@
 // Nasluchuj zawartosc DOM
 document.addEventListener( 'DOMContentLoaded', function(){
-    // Stworz metode ktora przechowa w zmiennej zarowno numery jak i litery aby wykorzystac ja pozniej w id za pomoca pluginu mustache
+    // Stworz funkcje ktorej zadaniem bedzie tworzenie 10-znakowych, losowych ciagow znakow i liczb - GT
     function randomString(){
         var chars = '0123456789abcdefghijklmnoprstuvwyxzABCDEFGHIJKLMNOPRSTUVWYXZ';
         // Stworz zmienna ktora rowna sie pustej wartosci
         var str = '';
-        // Stworz petle ktora przejdzie przez wszystkie znaki zmiennej chars
+        //  Stworz petle ktora wykona sie 10 razy - GT
         for( var i = 0; i < 10; i++ ){
-            // Dopisz do zmiennej str zmienna chars i uzyj funkcji Math ktora za kazdym razem losuje znaki w zmiennej chars 
-            // i pomnoz przez jej dlugosc 
+            // Dopisz do zmiennej "str" jeden losowy znak ze zmiennej "chars"; 
+            // losujemy liczbe z zakresu od zera do dlugosci zmiennej "chars" - GT
             str = str + chars[ Math.floor( Math.random() * chars.length ) ];
         }
         // Zwroc to co zostalo dopisane w petli do zmiennej str ktora juz nie jest pusta
@@ -16,25 +16,26 @@ document.addEventListener( 'DOMContentLoaded', function(){
     }
     // Stworz funkcje konstruujaca ktora zawiera 3 argumenty
     function generateTemplate( name, data, basicElement ){
-        // Zadeklaruj zmienna rowna wyszukaniu nazwy id zapisanej w argumencie funkcji i uzyj innerHTML aby pozniej ja wyswietlic
+        // Zadeklaruj zmienna, w ktorej zapiszesz zawartosc elementu o "id" rownym "name"
         var template = document.getElementById( name ).innerHTML;
-        // Deklaruj zmienna i przypisz stworzenie nowego elementu do argumentu funkcji a jesli nie zostanie znaleziona wtedy
-        // domyslnie uzyj elementu div za pomoca operacji logicznej OR
+        // Stworz zmienna w ktorej zapiszesz wynik tworzenia nowego elementu DOM; bedzie to albo znacznik podany
+        // w argumencie "basicElement", albo "div" jezeli parametr nie zostanie podany
         var element = document.createElement( basicElement || 'div' );
-        // Uzyj parametru mustache i sparsuj za pomoca metody parse aby przyspieszyc wyswietlanie szablonu na stronie
-        // uzywajac zmiennej ktora szuka nazwy id  
+        // Uzyj zmiennej w ktorej zapisalismy nasz markup (znacznik) naszego szablonu 
+        // (bo zmienna niczego nie szuka! zmienna tylko przechowuje to, co zostało znalezione) - GT  
         Mustache.parse( template );
-        // Uzyj zmienna w ktorej tworzymy nowy element div i za pomoca innerHTML przypisz wygenerowany szablon
+        // Do "innerHTML" utworzonego elementu DOM zapisz wynik dzialania funkcji "Mustache.render", ktora renderuje
+        // szablon "template" i wstawia do niego dane ze zmiennej "data"
         element.innerHTML = Mustache.render( template, data );
         // Zwroc to co mustache wyrenderowal
         return element;
     }
     // Stworz funkcje konstruujaca z jednym argumentem
     function Column( name ){
-        // Przypisz do zmiennej metode this aby uniknac braku kontekstu (nie jest widzialna)
+        // Przypisz do zmiennej obiekt this (ktory jest nasza Kolumna - GT) aby uniknac braku kontekstu (nie jest widzialna)
         // gdy odwlujemy sie do parametru funkcji w srodku funkcji
         var self = this;
-        //Stworz nowy parametr i Uzyj "this" ktory odwoluje sie do argumentu name i przypisz funkcje ktora generuje znaki losowo
+        // Utworz w kolumnie własciwosc "id" i jako jej wartosc wykorzystaj wynik dzialania funkcji generujacej losowe znaki - GT
         this.id = randomString();
         // Stworz nowy parametr
         this.name = name;
@@ -44,7 +45,8 @@ document.addEventListener( 'DOMContentLoaded', function(){
         // Uzyj tego parametru aby wyszukac nazwe klasy i nasluchuj gdy przycisk usuwania elementu zostanie klikniety i zapisz
         // zdarzenie jako argument w warunku funkcji
         this.element.querySelector( '.column' ).addEventListener( 'click', function( event ){
-            // Sprawdz czy zdarzenie przechowuje przycisk, jesli prawda, wykonaj operacje w przeciwnym razie nie rob nic
+            // Jezeli elementem wywolujacym klikniecie byl guzik usuwania, wywolaj funkcje usuwajaca; a jezeli elementem 
+            // wywolujacym zdarzenie byl guzik dodawania karty, dodaj karte do kolumny - GT
             if( event.target.classList.contains( 'btn-delete') ){
                 // Uzyj zmiennej ktora przechowuje metode "this" aby byla widzialna w srodku funkcji ktora usuwa kolumne
                 self.removeColumn();

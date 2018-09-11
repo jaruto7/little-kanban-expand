@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+
+.container { border: solid #d63031; min-width: 25%; max-width: 15em; background-color: #EF5350; text-align: center; padding: 1em; }
+
+.container h1 { font-family: Tahoma, sans-serif; color: #fff; text-shadow: 10px 5px 11px #d63031; }
+
+.container body { margin: 0 auto; }
+
+.container button { border: none; border-radius: 5%; font-family: Georgia, sans-serif; }
+
+.container .create-column { padding: 10px; background-color: red; min-width: 80%; }
+
+.container .create-column:hover { transform: scale(1.2); color: #fff; }
+
+.container .add-card { background-color: #fa983a; padding: 10px; }
+
+.container .add-card:hover { transform: scale(1.2); color: #fff; }
+
+.container .column-card-list { list-style-type: none; margin-right: 2.5em; font-family: 'Gamja Flower', cursive; }
+
+.container .column-title { font-family: Geneva, sans-serif; color: #fff; text-shadow: 5px 2px 15px #fa983a; }
+
+.container #card-template #column-template { position: absolute; }
+
+.container #btn-1 { position: relative; right: 3em; color: red; }
+
+.container #btn-1:hover { background-color: black; color: white; }
+
+.container #btn-2 { right: 7em; position: relative; bottom: 2.6em; border-radius: 50%; color: red; }
+
+.container #btn-2:hover { background-color: black; color: white; }
+
+.container .add-card { margin-right: 1.5em; }

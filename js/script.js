@@ -41,7 +41,7 @@ document.addEventListener( 'DOMContentLoaded', function(){
         this.name = name;
         // Stworz nowy parametr i przypisz funkcje ktora zwraca dwa argumenty:
         // nazwe klasy i uzycie metody mustache do wyswietlenia zawartosci w HTML
-        this.element = generateTemplate( 'column-template', { name: this.name } );
+        this.element = generateTemplate( 'column-template', { name: this.name, id: this.id } );
         // Uzyj tego parametru aby wyszukac nazwe klasy i nasluchuj gdy przycisk usuwania elementu zostanie klikniety i zapisz
         // zdarzenie jako argument w warunku funkcji
         this.element.querySelector( '.column' ).addEventListener( 'click', function( event ){

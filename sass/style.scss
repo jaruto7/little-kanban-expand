@@ -3,12 +3,17 @@
 }
 
 .container {
-    border: solid #d63031;
     min-width: 25%;
     max-width: 15em;
-    background-color: #EF5350;
     text-align: center;
-    padding: 1em;
+    .board {
+        width: 45em;
+        height: 25em;
+    }
+    .board {
+        background-color: #EF5350;
+        border: solid #d63031;
+    }
     h1 {
         font-family: Tahoma, sans-serif;
         color: #fff;
@@ -40,11 +45,20 @@
             color: #fff;
         }
     }
+    #column-template {
+        position: absolute;
+    }
+    .column {
+        float: left;
+        position: relative;
+        left: 1.5em;
+        margin: 0 2em;
+    }
     .column-card-list {
         list-style-type: none;
         margin-right: 2.5em;
         font-family: 'Gamja Flower', cursive;
-        min-height: 200px;
+        min-height: 150px;
     }
     .column-title {
         font-family: Geneva, sans-serif;

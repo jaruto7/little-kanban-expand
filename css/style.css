@@ -1,6 +1,10 @@
 * { box-sizing: border-box; }
 
-.container { border: solid #d63031; min-width: 25%; max-width: 15em; background-color: #EF5350; text-align: center; padding: 1em; }
+.container { min-width: 25%; max-width: 15em; text-align: center; }
+
+.container .board { width: 45em; height: 25em; }
+
+.container .board { background-color: #EF5350; border: solid #d63031; }
 
 .container h1 { font-family: Tahoma, sans-serif; color: #fff; text-shadow: 10px 5px 11px #d63031; }
 
@@ -16,7 +20,11 @@
 
 .container .add-card:hover { transform: scale(1.2); color: #fff; }
 
-.container .column-card-list { list-style-type: none; margin-right: 2.5em; font-family: 'Gamja Flower', cursive; min-height: 200px; }
+.container #column-template { position: absolute; }
+
+.container .column { float: left; position: relative; left: 1.5em; margin: 0 2em; }
+
+.container .column-card-list { list-style-type: none; margin-right: 2.5em; font-family: 'Gamja Flower', cursive; min-height: 150px; }
 
 .container .column-title { font-family: Geneva, sans-serif; color: #fff; text-shadow: 5px 2px 15px #fa983a; }
 

@@ -16,6 +16,7 @@
     }
     body {
         margin: 0 auto;
+        display: block;
     }
     button {
         border: none;
@@ -43,6 +44,7 @@
         list-style-type: none;
         margin-right: 2.5em;
         font-family: 'Gamja Flower', cursive;
+        min-height: 200px;
     }
     .column-title {
         font-family: Geneva, sans-serif;
@@ -52,6 +54,7 @@
     #card-template {
         #column-template {
             position: absolute;
+            display: inline-block;
         }
     }
     #btn-1 {

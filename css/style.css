@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+
+.container { min-width: 25%; max-width: 15em; text-align: center; }
+
+.container .board { width: 45em; height: 25em; }
+
+.container .board { background-color: #EF5350; border: solid #d63031; }
+
+.container h1 { font-family: Tahoma, sans-serif; color: #fff; text-shadow: 10px 5px 11px #d63031; }
+
+.container body { margin: 0 auto; display: block; }
+
+.container button { border: none; border-radius: 5%; font-family: Georgia, sans-serif; }
+
+.container .create-column { padding: 10px; background-color: red; min-width: 80%; }
+
+.container .create-column:hover { transform: scale(1.2); color: #fff; }
+
+.container .add-card { background-color: #fa983a; padding: 10px; }
+
+.container .add-card:hover { transform: scale(1.2); color: #fff; }
+
+.container #column-template { position: absolute; }
+
+.container .column { float: left; position: relative; left: 1.5em; margin: 0 2em; }
+
+.container .column-card-list { list-style-type: none; margin-right: 2.5em; font-family: 'Gamja Flower', cursive; min-height: 150px; }
+
+.container .column-title { font-family: Geneva, sans-serif; color: #fff; text-shadow: 5px 2px 15px #fa983a; }
+
+.container #card-template #column-template { position: absolute; display: inline-block; }
+
+.container #btn-1 { position: relative; right: 3em; color: red; }
+
+.container #btn-1:hover { background-color: black; color: white; }
+
+.container #btn-2 { right: 7em; position: relative; bottom: 2.6em; border-radius: 50%; color: red; }
+
+.container #btn-2:hover { background-color: black; color: white; }
+
+.container .add-card { margin-right: 1.5em; }

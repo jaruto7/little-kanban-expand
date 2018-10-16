@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "http-server",
     "test": "npm-run-all test:*",
     "test:html": "globstar nu-html-checker *.html",
     "init-project": "npm install && npm-run-all init:*",
@@ -42,6 +43,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
+    "http-server": "^0.11.1",
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
     "superagent": "^3.8.3"

@@ -4,9 +4,9 @@ function Card( id, name ) {
 
     this.id = id;
     this.name = name || 'No name given';
-    this.element = generateTemplate( 'card-template', { name: this.name }, 'li' );
+    this.element = generateTemplate( 'card-template', { description: this.name }, 'li' );
 
-    this.element.querySelector('.card').addEventListener('click', function (event) {
+    this.element.querySelector('.card').addEventListener('click', function(event) {
       event.stopPropagation();
 
       if (event.target.classList.contains('btn-delete')) {
@@ -23,7 +23,7 @@ Card.prototype = {
           return resp.json();
       })
       .then( function( resp ) {
-        self.element.parentNode.removeChild( this.element );
+        self.element.parentNode.removeChild( self.element );
       }); 
   }
 }

@@ -1,6 +1,6 @@
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
 var myHeaders = {
-    'X-Client-Id': 3239,
+    'X-Client-Id': '3239',
     'X-Auth-Token': '4b7e36984dcfbe3af1e978f88232d161'
 };
 
@@ -9,7 +9,7 @@ fetch( baseUrl + '/board', { headers: myHeaders } )
         return resp.json();
     })
     .then( function( resp ) {
-        setupColumns( resp. columns );
+        setupColumns( resp.columns );
     });
 
 function setupColumns( columns ) {
@@ -27,11 +27,11 @@ function setupCards( col, cards ) {
     });
 }
 
-Column.prototype = {
-    addCard: function( card ) {
-      this.element.querySelector( 'ul' ).appendChild( card.element );
-    }
-};
+// Column.prototype = {
+//     addCard: function( card ) {
+//       this.element.querySelector( 'ul' ).appendChild( card.element );
+//     }
+// };
 
 // OGÓLNA FUNKCJA - JUZ NIE POTRZEBNA
 // function randomString() {
